@@ -9,7 +9,7 @@ namespace VirtualPet.Tests
 
         public PetTests()
         {
-            testPet = new Pet();
+            testPet = new Pet("Test Name");
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Name()
         {
-            // Assert.NotNull(testPet.Name);
+             Assert.NotNull(testPet.Name);
         }
 
         [Fact]
