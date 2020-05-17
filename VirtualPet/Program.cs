@@ -12,7 +12,8 @@ namespace VirtualPet
             while (keepThinking)
             {
                 Console.WriteLine("Hello! Welcome to Virtual Pets\n");
-
+               
+                Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
                 Console.WriteLine("1. See Name");
                 Console.WriteLine("2. See Species");
