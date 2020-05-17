@@ -7,80 +7,115 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             Pet myPet = new Pet();
-            
-            Console.WriteLine("Hello! Welcome to Virtual Pets\n");
 
-            Console.WriteLine("What would you like to do?\n");
-            Console.WriteLine("1. Set Name");
-            Console.WriteLine("2. Set Species");
-            Console.WriteLine("3. Check Hunger");
-            Console.WriteLine("4. Check Boredom");
-            Console.WriteLine("5. Check Health");
-            Console.WriteLine("6. Check ticks");
-            Console.WriteLine("7. Exit Game\n");
-
-
-            string menuChoice = Console.ReadLine();
-
-            switch (menuChoice)
+            bool keepThinking = true;
+            while (keepThinking)
             {
-                case "1":
-                    string petName = myPet.SetName();
-                    Console.WriteLine($"Your Pet name is {petName}");
-                    break;
-                case "2":
-                    string petSpecies = myPet.SetSpecies();
-                    Console.WriteLine($"Your Pet species is {petSpecies}");
-                    break;
-                case "3":
-                    int petHunger = myPet.GetHunger();
-                    Console.WriteLine($"Your Pet hunger level is {petHunger}");
-                    break;
-                case "4":
-                    int petBoredom = myPet.GetBoredom();
-                    Console.WriteLine($"Your Pet boredom level is {petBoredom}");
-                    break;
-                case "5":
-                    int petHealth = myPet.GetHealth();
-                    Console.WriteLine($"Your Pet health level is {petHealth}");
-                    break;
-                case "6":
-                    Console.WriteLine("No Ticks Found");
-                    break;
-                case "7":
-                    Console.WriteLine("Good-bye!");
-                    break;
-                default:
-                    break;
+                Console.Clear();
+                Console.WriteLine("Hello! Welcome to Virtual Pets\n");
+
+                Console.WriteLine("What would you like to do?\n");
+                Console.WriteLine("1. Set Name");
+                Console.WriteLine("2. Set Species");
+                Console.WriteLine("3. Check Hunger");
+                Console.WriteLine("4. Check Boredom");
+                Console.WriteLine("5. Check Health");
+                Console.WriteLine("6. Check ticks");
+                Console.WriteLine("7. Exit Game\n");
+
+
+                string menuChoice = Console.ReadLine();
+
+                switch (menuChoice)
+                {
+                    case "1":
+                        SetPet();
+                        break;
+                    case "2":
+                        SetSpecies();
+                        break;
+                    case "3":
+                        CheckHunger();
+                        break;
+                    case "4":
+                        CheckBoredom();
+                        break;
+                    case "5":
+                        CheckHealth();
+                        break;
+                    case "6":
+                        CheckTicks();
+                        break;
+                    case "7":
+                        keepThinking = false;
+                        Console.WriteLine("Good-bye!");
+                        break;
+                    default:
+                        break;
+                }
+
             }
-
-
             
+        }
+        static void SetPet()
+        {
+            Console.Clear();
+            Pet myPet = new Pet();
+            string setName = myPet.SetName();
+            Console.WriteLine($"You'r pet's name is {setName}");
             
-
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-
-        
-        
-        
-        
-        
+            Console.WriteLine("Press Enter To Return");
             Console.ReadLine();
         }
+        static void SetSpecies()
+        {
+            Console.Clear();
+            Pet myPet = new Pet();
+            string setSpecies = myPet.SetSpecies();
+            Console.WriteLine($"You'r pet's species is {setSpecies}");
+
+            Console.WriteLine("Press Enter To Return");
+            Console.ReadLine();
+        }
+        static void CheckHunger()
+        {
+            Console.Clear();
+            Pet myPet = new Pet();
+            int checkHunger = myPet.GetHunger();
+            Console.WriteLine($"You'r pet's Hunger level is {checkHunger}");
+
+            Console.WriteLine("Press Enter To Return");
+            Console.ReadLine();
+        }
+        static void CheckBoredom()
+        {
+            Console.Clear();
+            Pet myPet = new Pet();
+            int checkBoredom = myPet.GetBoredom();
+            Console.WriteLine($"You'r pet's Boredom level is {checkBoredom}");
+
+            Console.WriteLine("Press Enter To Return");
+            Console.ReadLine();
+        }
+        static void CheckHealth()
+        {
+            Console.Clear();
+            Pet myPet = new Pet();
+            int checkBoredom = myPet.GetBoredom();
+            Console.WriteLine($"You'r pet's boredom level is {checkBoredom}");
+
+            Console.WriteLine("Press Enter To Return");
+            Console.ReadLine();
+        }
+        static void CheckTicks()
+        {
+            Console.Clear();
+
+
+            Console.WriteLine("Press Enter To Return");
+            Console.ReadLine();
+        }
+
 
 
     }
