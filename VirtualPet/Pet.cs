@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace VirtualPet
 {
     public class Pet
     {
-        public string Name { get; set; }
-
-
-
-        public Pet(string name)
+        public string name { get; set; }
+        
+        public PetName()
         {
-            Name = name;
+            name = "Shane";
+            
+            
         }
+        public string GetName()
+        {
+            return name;
+            
+        }
+
+        
+
     }
 
 

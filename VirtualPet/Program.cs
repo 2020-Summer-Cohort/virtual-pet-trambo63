@@ -6,10 +6,26 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello! Welcome to Virtual Pets");
+            Console.WriteLine("Hello! Welcome to Virtual Pets\n");
+
+           
+            Pet userpet = new Pet("Shane", "Dog");
             
-            //intstance variables hunger, thirst, bathroom
-            //methods give food, give water, let outside
+
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
             
 
         
@@ -17,6 +33,7 @@ namespace VirtualPet
         
         
         
+            Console.ReadLine();
         }
 
 
