@@ -24,12 +24,12 @@ namespace VirtualPet
 
         }
         //CLASS METHODS
-        public string SetName()
+        public string PetName()
         {
             return Name;
         }
         
-        public string SetSpecies()
+        public string PetSpecies()
         {
             return Species;
         }
@@ -65,7 +65,7 @@ namespace VirtualPet
             Boredom -= 20;
             Health += 10;
         }
-        public void Tick()
+        public void DoNothing()
         {
             Hunger += 5;
             Boredom += 5;
