@@ -20,7 +20,7 @@ namespace VirtualPet
                 Console.WriteLine("3. Check Hunger");
                 Console.WriteLine("4. Check Boredom");
                 Console.WriteLine("5. Check Health");
-                Console.WriteLine("6. Check ticks");
+                Console.WriteLine("6. Do Nothing");
                 Console.WriteLine("7. Give Food");
                 Console.WriteLine("8. Take to Vet");
                 Console.WriteLine("9. Play With");
