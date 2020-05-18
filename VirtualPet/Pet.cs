@@ -71,6 +71,10 @@ namespace VirtualPet
             Boredom += 5;
             Health -= 5;
         }
+        public void MinHunger()
+        {
+            Hunger = 0;
+        }
 
 
 
