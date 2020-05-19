@@ -41,40 +41,47 @@ namespace VirtualPet
                     Console.WriteLine("press enter to exit");
                     keepThinking = false;
                 }
-                if (hungerLevel <= 0)
+                if (boredomLevel <= 0)
                 {
-                    Console.WriteLine(name + " is full");
+                    Console.Clear();
+                    Console.WriteLine(name + " ran away");
+                    Console.WriteLine("press enter to exit");
+                    keepThinking = false;
                 }
+               
                     
-                
-
-
                 string menuChoice = Console.ReadLine();
 
                 switch (menuChoice)
                 {
                     case "1":
                         myPet.DoNothing();
+                        Console.Clear();
                         Console.WriteLine("Bad Owner!!\n Hunger level +5\n boredom level +5\n health -5");
                         break;
                     case "2":
                         myPet.Feed();
+                        Console.Clear();
                         Console.WriteLine("You feed your pet hunger level -40");
                         break;
                     case "3":
                         myPet.SeeDoctor();
+                        Console.Clear();
                         Console.WriteLine("Took pet to doctor:\n health level + 30");
                         break;
                     case "4":
                         myPet.Play();
+                        Console.Clear();
                         Console.WriteLine("Playing with pet:\n hunger level +10\n boredom level - 20\n health level +10 ");
                         break;
                     case "5":
                         keepThinking = false;
+                        Console.Clear();
                         Console.WriteLine("Good-bye!");
                         break;
                     default:
                         break;
+                        
 
                    
 
