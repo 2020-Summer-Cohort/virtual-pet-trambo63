@@ -17,7 +17,7 @@ namespace VirtualPet
             
 
             bool keepThinking = true;
-            while (keepThinking)
+            do
             {
                 Console.WriteLine(name + " the " + species);
                 int hungerLevel = myPet.GetHunger();
@@ -33,8 +33,8 @@ namespace VirtualPet
                 Console.WriteLine("3. Take to Vet");
                 Console.WriteLine("4. Play With");
                 Console.WriteLine("5. Exit Game\n");
-              
-                if (hungerLevel >= 100 || healthLevel <= 0) 
+
+                if (hungerLevel >= 100 || healthLevel <= 0)
                 {
                     Console.Clear();
                     Console.WriteLine(name + " is dead!!");
@@ -51,48 +51,43 @@ namespace VirtualPet
 
                 string menuChoice = Console.ReadLine();
 
-                    switch (menuChoice)
-                    {
-                        case "1":
-                            myPet.DoNothing();
-                            Console.Clear();
-                            Console.WriteLine("Bad Owner!!\n Hunger level +5\n boredom level +5\n health -5");
-                            break;
-                        case "2":
-                            myPet.Feed();
-                            Console.Clear();
-                            Console.WriteLine("You feed your pet hunger level -40");
-                            break;
-                        case "3":
-                            myPet.SeeDoctor();
-                            Console.Clear();
-                            Console.WriteLine("Took pet to doctor:\n health level + 30");
-                            break;
-                        case "4":
-                            myPet.Play();
-                            Console.Clear();
-                            Console.WriteLine("Playing with pet:\n hunger level +10\n boredom level - 20\n health level +10 ");
-                            break;
-                        case "5":
-                            keepThinking = false;
-                            Console.Clear();
-                            Console.WriteLine("Good-bye!");
-                            break;
-                        default:
-                            break;
-
-                    }
-                int menuOp = Convert.ToInt32(menuChoice);
-                if (menuOp > 5)
+                switch (menuChoice)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Invalid Entry");
+                    case "1":
+                        myPet.DoNothing();
+                        Console.Clear();
+                        Console.WriteLine("Bad Owner!!\n Hunger level +5\n boredom level +5\n health -5");
+                        break;
+                    case "2":
+                        myPet.Feed();
+                        Console.Clear();
+                        Console.WriteLine("You feed your pet hunger level -40");
+                        break;
+                    case "3":
+                        myPet.SeeDoctor();
+                        Console.Clear();
+                        Console.WriteLine("Took pet to doctor:\n health level + 30");
+                        break;
+                    case "4":
+                        myPet.Play();
+                        Console.Clear();
+                        Console.WriteLine("Playing with pet:\n hunger level +10\n boredom level - 20\n health level +10 ");
+                        break;
+                    case "5":
+                        keepThinking = false;
+                        Console.Clear();
+                        Console.WriteLine("Good-bye!");
+                        break;
+                    default:
+                        break;
+
                 }
 
 
-
-            }
+            } while (keepThinking);
             
+
+
         }
         
 
