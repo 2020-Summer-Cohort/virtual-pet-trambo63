@@ -66,6 +66,13 @@ namespace VirtualPet
                         break;
                     case "6":
                         //Adopt Pet
+                        Console.Clear();
+                        petList.PrintAllPetNames();
+                        Console.Write("Which Pet would you like to Adopt: ");
+                        int petNumber = Convert.ToInt32(Console.ReadLine());
+                        Pet petToRemove = petList.FindPetNameByIndex(petNumber - 1);
+                        petList.RemovePetFromList(petToRemove);
+                        Console.WriteLine("Your Pet has been Adopted!");
                         break;
                     case "7":
                         petList.PrintAllPetDetails();

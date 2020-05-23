@@ -20,8 +20,32 @@ namespace VirtualPet
             {
                 pet.PrintAllPetsStatus();
             }
-
         }
+
+        public void PrintAllPetNames()
+        {
+            int listNumber = 1;
+
+            Console.WriteLine("Current Pets in Shelther");
+            foreach(Pet pet in PetShelterList)
+            {
+                string name = pet.GetName();
+                Console.WriteLine($"{listNumber}. {name}");
+                listNumber++;
+            }
+        }
+
+        public Pet FindPetNameByIndex(int index)
+        {
+            Pet selectedPet = PetShelterList[index];
+            return selectedPet; 
+        }
+
+        public void RemovePetFromList(Pet pet)
+        {
+            PetShelterList.Remove(pet);
+        }
+
 
     }
 }

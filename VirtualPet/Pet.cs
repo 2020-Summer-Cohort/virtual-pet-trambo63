@@ -28,6 +28,10 @@ namespace VirtualPet
         {
             Name = name;
         }
+        public string GetName()
+        {
+            return Name;
+        }
         
         public void PetSpecies(string species)
         {
