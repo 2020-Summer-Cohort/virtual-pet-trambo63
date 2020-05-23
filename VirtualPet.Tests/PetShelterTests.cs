@@ -15,10 +15,11 @@ namespace VirtualPet.Tests
         } 
         //AddPet
         [Fact]
-        public void AddPet()
+        public void AddPet_Should_Increase_List_Count_To_1()
         {
-            
+            Pet newPet = new Pet();
 
+            sut.AddPet(newPet);
 
             Assert.Single(sut.PetShelterList);
         }
