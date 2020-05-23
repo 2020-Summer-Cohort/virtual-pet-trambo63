@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Transactions;
 
 namespace VirtualPet
 {
@@ -17,22 +18,20 @@ namespace VirtualPet
         //CLASS CONSTRUCTORS
         public Pet()
         {
-            Name = "Shane";
-            Species = "Dog";
             Hunger = 50;
             Boredom = 60;
             Health = 30;
 
         }
         //CLASS METHODS
-        public string PetName()
+        public void PetName(string name)
         {
-            return Name;
+            Name = name;
         }
         
-        public string PetSpecies()
+        public void PetSpecies(string species)
         {
-            return Species;
+            Species = species;
         }
         
         public int GetHunger()
@@ -86,12 +85,13 @@ namespace VirtualPet
                 Hunger = 0;
             }
         }
-        public void DoNothing()
+        public void Neglect()
         {
             Hunger += 5;
             Boredom += 5;
             Health -= 5;
         }
+
 
       
 

@@ -5,8 +5,22 @@ using Xunit;
 
 namespace VirtualPet.Tests
 {
-    class PetShelterTests
+    public class PetShelterTests
     {
+        PetShelter sut;
 
+        public PetShelterTests()
+        {
+            sut = new PetShelter();
+        } 
+        //AddPet
+        [Fact]
+        public void AddPet()
+        {
+            
+
+
+            Assert.Single(sut.PetShelterList);
+        }
     }
 }

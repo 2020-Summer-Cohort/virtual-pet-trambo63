@@ -4,8 +4,8 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class PetShelter
+    public class PetShelter
     {
-
+        public List<Pet> PetShelterList = new List<Pet>();
     }
 }
