@@ -96,7 +96,7 @@ namespace VirtualPet
             Health -= 5;
         }
 
-        public void PrintAllPetsStatus()
+        public void PrintPetsStatus()
         {
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Species: {Species}");

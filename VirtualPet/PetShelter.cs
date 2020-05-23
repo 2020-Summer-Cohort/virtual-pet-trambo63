@@ -18,7 +18,7 @@ namespace VirtualPet
             Console.WriteLine("Your Pets:");
             foreach(Pet pet in PetShelterList)
             {
-                pet.PrintAllPetsStatus();
+                pet.PrintPetsStatus();
             }
         }
 

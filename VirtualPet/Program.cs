@@ -21,12 +21,13 @@ namespace VirtualPet
                 Console.WriteLine("What would you like to do?\n");
                 Console.WriteLine("1. Neglect Pets");
                 Console.WriteLine("2. Feed Pets");
-                Console.WriteLine("3. Take to Vet");
-                Console.WriteLine("4. Play With Pets");
+                Console.WriteLine("3. Take a to Vet");
+                Console.WriteLine("4. Play With a Pet");
                 Console.WriteLine("5. Admit Pet to Shelter");
                 Console.WriteLine("6. Adopt Pet");
-                Console.WriteLine("7. See Pets Status");
-                Console.WriteLine("8. Exit Game\n");
+                Console.WriteLine("7. See All Pets Status");
+                Console.WriteLine("8. See individual Pet's Status");
+                Console.WriteLine("9. Exit Game\n");
 
                 string menuChoice = Console.ReadLine();
                 Console.Clear();
@@ -72,12 +73,21 @@ namespace VirtualPet
                         int petNumber = Convert.ToInt32(Console.ReadLine());
                         Pet petToRemove = petList.FindPetNameByIndex(petNumber - 1);
                         petList.RemovePetFromList(petToRemove);
-                        Console.WriteLine("Your Pet has been Adopted!");
+                        Console.WriteLine("Your Pet has been Adopted!\n");
                         break;
                     case "7":
                         petList.PrintAllPetDetails();
                         break;
                     case "8":
+                        Console.Clear();
+                        petList.PrintAllPetNames();
+                        Console.Write("Which Pet would you like to attend to: ");
+                        petNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        Pet petToAttendTo = petList.FindPetNameByIndex(petNumber - 1);
+                        petToAttendTo.PrintPetsStatus();
+                        break;
+                    case "9":
                         keepThinking = false;
                         Console.Clear();
                         Console.WriteLine("Good-bye!");
