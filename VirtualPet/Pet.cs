@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Transactions;
@@ -8,7 +9,10 @@ using System.Transactions;
 namespace VirtualPet
 {
     public class Pet
-    {   //CLASS PROPERTIES
+    {
+        Random random = new Random();
+
+        //CLASS PROPERTIES
         public string Name { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
@@ -19,10 +23,10 @@ namespace VirtualPet
         //CLASS CONSTRUCTORS
         public Pet()
         {
-            Hunger = 50;
-            Thirst = 40;
-            Boredom = 60;
-            Health = 30;
+            Hunger = random.Next(20, 80);
+            Thirst = random.Next(20, 80);
+            Boredom = random.Next(20, 80);
+            Health = random.Next(20, 80);
 
         }
         //CLASS METHODS
@@ -109,6 +113,7 @@ namespace VirtualPet
         public void Neglect()
         {
             Hunger += 5;
+            Thirst += 5;
             Boredom += 5;
             Health -= 5;
         }

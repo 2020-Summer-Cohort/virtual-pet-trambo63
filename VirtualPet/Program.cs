@@ -83,7 +83,6 @@ namespace VirtualPet
                     case "8":
                         keepThinking = false;
                         Console.Clear();
-                        Console.WriteLine("Good-bye!");
                         break;
                     default:
                         break;

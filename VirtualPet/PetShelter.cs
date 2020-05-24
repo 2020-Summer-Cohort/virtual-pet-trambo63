@@ -67,7 +67,5 @@ namespace VirtualPet
                 pet.Neglect();
             }
         }
-
-
     }
 }
