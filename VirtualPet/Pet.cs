@@ -110,7 +110,7 @@ namespace VirtualPet
                 Hunger = 0;
             }
         }
-        public void Neglect()
+        public void Vacation()
         {
             Hunger += 5;
             Thirst += 5;

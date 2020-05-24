@@ -60,11 +60,11 @@ namespace VirtualPet
                 pet.Water();
             }
         }
-        public void NeglectPets()
+        public void Vacation()
         {
             foreach(Pet pet in PetShelterList)
             {
-                pet.Neglect();
+                pet.Vacation();
             }
         }
     }
