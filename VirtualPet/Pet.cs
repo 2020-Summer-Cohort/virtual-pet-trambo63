@@ -12,6 +12,7 @@ namespace VirtualPet
         public string Name { get; set; }
         public string Species { get; set; }
         public int Hunger { get; set; }
+        public int Thirst { get; set; }
         public int Boredom { get; set; }
         public int Health { get; set; }
 
@@ -19,6 +20,7 @@ namespace VirtualPet
         public Pet()
         {
             Hunger = 50;
+            Thirst = 40;
             Boredom = 60;
             Health = 30;
 
@@ -43,6 +45,11 @@ namespace VirtualPet
             return Hunger;
         }
         
+        public int GetThirst()
+        {
+            return Thirst;
+        }
+        
         public int GetBoredom()
         {
             return Boredom;
@@ -60,6 +67,16 @@ namespace VirtualPet
             {
                 Hunger = 0;
             }
+        }
+
+        public void Water()
+        {
+            Thirst -= 30;
+            if(Thirst <=0)
+            {
+                Thirst = 0;
+            }
+
         }
 
         public void SeeDoctor()
@@ -98,11 +115,7 @@ namespace VirtualPet
 
         public void PrintPetsStatus()
         {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Species: {Species}");
-            Console.WriteLine($"Health Level: {Health}");
-            Console.WriteLine($"Hunger Level: {Hunger}");
-            Console.WriteLine($"Boredom Level: {Boredom}\n");
+            Console.WriteLine($"Name: {Name}| Species: {Species}| Health: {Health}| Hunger: {Hunger}| Thirst: {Thirst}| Boredom: {Boredom}\n");
         }
 
 

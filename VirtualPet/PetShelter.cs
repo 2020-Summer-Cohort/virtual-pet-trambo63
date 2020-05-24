@@ -15,7 +15,7 @@ namespace VirtualPet
 
         public void PrintAllPetDetails()
         {
-            Console.WriteLine("Your Pets:");
+            Console.WriteLine("Your Pets:\n");
             foreach(Pet pet in PetShelterList)
             {
                 pet.PrintPetsStatus();
@@ -44,6 +44,28 @@ namespace VirtualPet
         public void RemovePetFromList(Pet pet)
         {
             PetShelterList.Remove(pet);
+        }
+
+        public void FeedAllPets()
+        {
+            foreach(Pet pet in PetShelterList)
+            {
+                pet.Feed();
+            }
+        }
+        public void WaterAllPets()
+        {
+            foreach(Pet pet in PetShelterList)
+            {
+                pet.Water();
+            }
+        }
+        public void NeglectPets()
+        {
+            foreach(Pet pet in PetShelterList)
+            {
+                pet.Neglect();
+            }
         }
 
 

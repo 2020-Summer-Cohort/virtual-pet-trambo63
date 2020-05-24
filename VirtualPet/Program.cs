@@ -16,18 +16,18 @@ namespace VirtualPet
             bool keepThinking = true;
             do
             {
-               
+                petList.PrintAllPetDetails();
+
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
                 Console.WriteLine("1. Neglect Pets");
                 Console.WriteLine("2. Feed Pets");
-                Console.WriteLine("3. Take a to Vet");
-                Console.WriteLine("4. Play With a Pet");
-                Console.WriteLine("5. Admit Pet to Shelter");
-                Console.WriteLine("6. Adopt Pet");
-                Console.WriteLine("7. See All Pets Status");
-                Console.WriteLine("8. See individual Pet's Status");
-                Console.WriteLine("9. Exit Game\n");
+                Console.WriteLine("3. Water Pets");
+                Console.WriteLine("4. Take a Pet to Vet");
+                Console.WriteLine("5. Play With a Pet");
+                Console.WriteLine("6. Admit Pet to Shelter");
+                Console.WriteLine("7. Adopt Pet");
+                Console.WriteLine("8. Exit Game\n");
 
                 string menuChoice = Console.ReadLine();
                 Console.Clear();
@@ -35,27 +35,33 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        //myPet.Neglect();
-                        //Console.Clear();
-                        //Console.WriteLine("Bad Owner!!\n Hunger level +5\n boredom level +5\n health -5");
+                        petList.NeglectPets();
                         break;
                     case "2":
-                        //myPet.Feed();
-                        //Console.Clear();
-                        //Console.WriteLine("You feed your pet hunger level -40");
+                        petList.FeedAllPets();  
                         break;
                     case "3":
-                        //myPet.SeeDoctor();
-                        //Console.Clear();
-                        //Console.WriteLine("Took pet to doctor:\n health level + 30");
+                        petList.WaterAllPets();
                         break;
                     case "4":
-                        //myPet.Play();
-                        //Console.Clear();
-                        //Console.WriteLine("Playing with pet:\n hunger level +10\n boredom level - 20\n health level +10 ");
+                        Console.Clear();
+                        petList.PrintAllPetNames();
+                        Console.Write("Which Pet would you like to take to the Vet: ");
+                        int petNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        Pet petToTakeToVet = petList.FindPetNameByIndex(petNumber - 1);
+                        petToTakeToVet.SeeDoctor();
                         break;
                     case "5":
-                        //Admit Pet
+                        Console.Clear();
+                        petList.PrintAllPetNames();
+                        Console.Write("Which Pet would you like to paly with: ");
+                        petNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        Pet petToPlayWith = petList.FindPetNameByIndex(petNumber - 1);
+                        petToPlayWith.Play();
+                        break;
+                    case "6":
                         myPet = new Pet();
                         Console.Clear();
                         Console.Write("Enter Pet's Name: ");
@@ -65,29 +71,16 @@ namespace VirtualPet
                         petList.AddPet(myPet);
                         Console.Clear();
                         break;
-                    case "6":
-                        //Adopt Pet
+                    case "7":
                         Console.Clear();
                         petList.PrintAllPetNames();
                         Console.Write("Which Pet would you like to Adopt: ");
-                        int petNumber = Convert.ToInt32(Console.ReadLine());
+                        petNumber = Convert.ToInt32(Console.ReadLine());
                         Pet petToRemove = petList.FindPetNameByIndex(petNumber - 1);
                         petList.RemovePetFromList(petToRemove);
-                        Console.WriteLine("Your Pet has been Adopted!\n");
-                        break;
-                    case "7":
-                        petList.PrintAllPetDetails();
+                        Console.Clear();
                         break;
                     case "8":
-                        Console.Clear();
-                        petList.PrintAllPetNames();
-                        Console.Write("Which Pet would you like to attend to: ");
-                        petNumber = Convert.ToInt32(Console.ReadLine());
-                        Console.Clear();
-                        Pet petToAttendTo = petList.FindPetNameByIndex(petNumber - 1);
-                        petToAttendTo.PrintPetsStatus();
-                        break;
-                    case "9":
                         keepThinking = false;
                         Console.Clear();
                         Console.WriteLine("Good-bye!");
