@@ -27,7 +27,6 @@ namespace VirtualPet
             Thirst = random.Next(20, 80);
             Boredom = random.Next(20, 80);
             Health = random.Next(20, 80);
-
         }
         //CLASS METHODS
         public void PetName(string name)
@@ -105,10 +104,11 @@ namespace VirtualPet
             {
                 Health = 100;
             }
-            if (Hunger <= 0)
+            if (Hunger >= 100)
             {
-                Hunger = 0;
+                Hunger = 100;
             }
+         
         }
         public void Vacation()
         {
@@ -123,20 +123,7 @@ namespace VirtualPet
             Console.WriteLine($"Name: {Name}| Species: {Species}| Health: {Health}| Hunger: {Hunger}| Thirst: {Thirst}| Boredom: {Boredom}\n");
         }
 
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 

@@ -11,13 +11,12 @@ namespace VirtualPet
             PetShelter petList = new PetShelter();
 
                 Console.WriteLine("Hello! Welcome to Virtual Pets\n");
-                  
 
             bool keepThinking = true;
             do
             {
                 petList.PrintAllPetDetails();
-
+                
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
                 Console.WriteLine("1. Vacation");
@@ -88,7 +87,6 @@ namespace VirtualPet
                         break;
 
                 }
-
 
             } while (keepThinking);
             
