@@ -12,6 +12,8 @@ namespace VirtualPet
     {
         Random random = new Random();
 
+        PetShelter petLevels = new PetShelter();
+
         //CLASS PROPERTIES
         public string Name { get; set; }
         public string Species { get; set; }
@@ -116,7 +118,29 @@ namespace VirtualPet
             Thirst += 5;
             Boredom += 5;
             Health -= 5;
+
+            if (Hunger >= 100)
+            {
+                Hunger = 100;
+            }
+            if (Thirst >= 100)
+            {
+                Thirst = 100;
+            }
+            if (Boredom >=100)
+            {
+                Boredom = 100;
+            }
+            if (Health <= 0)
+            {
+                Health = 0;
+            }
         }
+        public void MaxHunger()
+        {
+            Hunger = 100;
+        }
+
 
         public void PrintPetsStatus()
         {

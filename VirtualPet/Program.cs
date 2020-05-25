@@ -7,6 +7,7 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             //myPet is Object of Type Pet
+            
             Pet myPet;
             PetShelter petList = new PetShelter();
 
@@ -37,7 +38,7 @@ namespace VirtualPet
                         petList.Vacation();
                         break;
                     case "2":
-                        petList.FeedAllPets();  
+                        petList.FeedAllPets();
                         break;
                     case "3":
                         petList.WaterAllPets();
@@ -87,6 +88,7 @@ namespace VirtualPet
                         break;
 
                 }
+          
 
             } while (keepThinking);
             

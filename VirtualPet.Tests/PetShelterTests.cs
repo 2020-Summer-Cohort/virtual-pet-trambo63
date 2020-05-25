@@ -47,5 +47,6 @@ namespace VirtualPet.Tests
 
             Assert.DoesNotContain(pet, sut.PetShelterList);
         }
+
     }
 }
