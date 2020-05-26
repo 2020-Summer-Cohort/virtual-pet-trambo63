@@ -48,5 +48,48 @@ namespace VirtualPet.Tests
             Assert.DoesNotContain(pet, sut.PetShelterList);
         }
 
+        [Fact]
+        public void FeedAllPets_Should_Feed_All_Pets()
+        {
+            Pet firstPet = new Pet();
+            firstPet.Hunger = 10;
+            sut.AddPet(firstPet);
+
+            Pet secondPet = new Pet();
+            secondPet.Hunger = 10;
+            sut.AddPet(secondPet);
+
+            sut.FeedAllPets();
+
+            Assert.Equal(40, firstPet.Hunger);
+            Assert.Equal(40, secondPet.Hunger);
+        }
+
+        [Fact]
+        public void WaterAllPets_Should_Water_All_Pets()
+        {
+            Pet firstPet = new Pet();
+            firstPet.Thirst = 10;
+            sut.AddPet(firstPet);
+
+            Pet secondPet = new Pet();
+            secondPet.Thirst = 10;
+            sut.AddPet(secondPet);
+
+            sut.WaterAllPets();
+
+            Assert.Equal(40, firstPet.Thirst);
+            Assert.Equal(40, secondPet.Thirst);
+
+        }
+
+        
+
+
     }
+
+       
+
+
+
 }

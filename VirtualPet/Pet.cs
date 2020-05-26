@@ -24,10 +24,10 @@ namespace VirtualPet
         //CLASS CONSTRUCTORS
         public Pet()
         {
-            Hunger = random.Next(20, 80);
-            Thirst = random.Next(20, 80);
-            Boredom = random.Next(20, 80);
-            Health = random.Next(20, 80);
+            Hunger = random.Next(30, 71);
+            Thirst = random.Next(30, 71);
+            Boredom = random.Next(30, 71);
+            Health = random.Next(30, 71);
         }
         //CLASS METHODS
         public void PetName(string name)
@@ -175,7 +175,13 @@ namespace VirtualPet
 
         public void PrintPetsStatus()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            if (Hunger >= 80 || Thirst >= 80 || Boredom >= 80 || Health <= 20)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+            }
             Console.WriteLine($"Name: {Name}| Species: {Species}| Health: {Health}| Hunger: {Hunger}| Thirst: {Thirst}| Boredom: {Boredom}\n");
+            Console.ResetColor();
         }
 
 
