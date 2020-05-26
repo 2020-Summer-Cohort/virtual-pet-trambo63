@@ -116,12 +116,12 @@ namespace VirtualPet
             }
          
         }
-        public void Vacation()
+        public void Park()
         {
             Hunger += 5;
             Thirst += 5;
-            Boredom += 5;
-            Health -= 5;
+            Boredom -= 15;
+            Health += 15;
 
             if (Hunger >= 100)
             {
@@ -131,13 +131,13 @@ namespace VirtualPet
             {
                 Thirst = 100;
             }
-            if (Boredom >=100)
+            if (Boredom <=0)
             {
-                Boredom = 100;
+                Boredom = 0;
             }
-            if (Health <= 0)
+            if (Health >= 100)
             {
-                Health = 0;
+                Health = 100;
             }
         }
     
@@ -148,7 +148,6 @@ namespace VirtualPet
         public void PrintPetsStatus()
         {
             Console.WriteLine($"Name: {Name}| Species: {Species}| Health: {Health}| Hunger: {Hunger}| Thirst: {Thirst}| Boredom: {Boredom}\n");
-         
         }
 
 

@@ -19,7 +19,7 @@ namespace VirtualPet
              
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
-                Console.WriteLine("1. Vacation");
+                Console.WriteLine("1. Take Animals to Park");
                 Console.WriteLine("2. Feed Pets");
                 Console.WriteLine("3. Water Pets");
                 Console.WriteLine("4. Take a Pet to Vet");
@@ -34,7 +34,7 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        petList.Vacation();
+                        petList.Park();
                         break;
                     case "2":
                         petList.FeedAllPets();

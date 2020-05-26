@@ -60,11 +60,11 @@ namespace VirtualPet
                 pet.Water();
             }
         }
-        public void Vacation()
+        public void Park()
         {
             foreach(Pet pet in PetShelterList)
             {
-                pet.Vacation();
+                pet.Park();
             }
         }
 
