@@ -67,5 +67,8 @@ namespace VirtualPet
                 pet.Vacation();
             }
         }
+
+   
+
     }
 }

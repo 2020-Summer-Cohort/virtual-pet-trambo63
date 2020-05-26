@@ -7,17 +7,16 @@ namespace VirtualPet
         static void Main(string[] args)
         {
             //myPet is Object of Type Pet
-            
             Pet myPet;
             PetShelter petList = new PetShelter();
 
-                Console.WriteLine("Hello! Welcome to Virtual Pets\n");
+                Console.WriteLine("Hello! Welcome to Virtual Pet Shelter\n");
 
             bool keepThinking = true;
             do
             {
                 petList.PrintAllPetDetails();
-                
+             
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
                 Console.WriteLine("1. Vacation");
@@ -82,13 +81,13 @@ namespace VirtualPet
                         break;
                     case "8":
                         keepThinking = false;
-                        Console.Clear();
                         break;
                     default:
                         break;
+           
 
                 }
-          
+               
 
             } while (keepThinking);
             

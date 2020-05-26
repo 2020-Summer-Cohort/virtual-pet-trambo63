@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -11,8 +12,6 @@ namespace VirtualPet
     public class Pet
     {
         Random random = new Random();
-
-        PetShelter petLevels = new PetShelter();
 
         //CLASS PROPERTIES
         public string Name { get; set; }
@@ -98,6 +97,7 @@ namespace VirtualPet
             Hunger += 10;
             Boredom -= 20;
             Health += 10;
+            Thirst += 10;
             if (Boredom <= 0)
             {
                 Boredom = 0;
@@ -109,6 +109,10 @@ namespace VirtualPet
             if (Hunger >= 100)
             {
                 Hunger = 100;
+            }
+            if (Thirst >= 100)
+            {
+                Thirst = 100;
             }
          
         }
@@ -136,18 +140,17 @@ namespace VirtualPet
                 Health = 0;
             }
         }
-        public void MaxHunger()
-        {
-            Hunger = 100;
-        }
-
+    
+      
+    
+    
 
         public void PrintPetsStatus()
         {
             Console.WriteLine($"Name: {Name}| Species: {Species}| Health: {Health}| Hunger: {Hunger}| Thirst: {Thirst}| Boredom: {Boredom}\n");
+         
         }
 
-        
 
 
 
