@@ -65,6 +65,7 @@ namespace VirtualPet
             foreach(Pet pet in PetShelterList)
             {
                 pet.Park();
+                pet.Tick();
             }
         }
 

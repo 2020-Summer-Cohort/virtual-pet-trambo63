@@ -114,6 +114,7 @@ namespace VirtualPet
             {
                 Thirst = 100;
             }
+            
          
         }
         public void Park()
@@ -139,6 +140,33 @@ namespace VirtualPet
             {
                 Health = 100;
             }
+
+        }
+        public void Tick()
+        {
+            Boredom += random.Next(0, 11);
+            Hunger += random.Next(0, 11);
+            Thirst += random.Next(0, 11);
+            Health -= random.Next(0, 11);
+
+
+            if (Boredom >= 100)
+            {
+                Boredom = 100;
+            }
+            if (Hunger >= 100)
+            {
+                Hunger = 100;
+            }
+            if (Thirst >= 100)
+            {
+                Thirst = 100;
+            }
+            if (Health <= 100)
+            {
+                Health = 100;
+            }
+
         }
     
       
