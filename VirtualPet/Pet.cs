@@ -147,7 +147,6 @@ namespace VirtualPet
             Boredom += random.Next(0, 11);
             Hunger += random.Next(0, 11);
             Thirst += random.Next(0, 11);
-            Health -= random.Next(0, 11);
 
 
             if (Boredom >= 100)
@@ -162,12 +161,19 @@ namespace VirtualPet
             {
                 Thirst = 100;
             }
-            if (Health <= 100)
-            {
-                Health = 100;
-            }
+      
 
         }
+        public bool CheckIfDead()
+        {
+            if (Hunger >= 100 || Thirst >= 100 || Health <= 0)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+     
     
       
     

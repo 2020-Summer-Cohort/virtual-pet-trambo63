@@ -2,7 +2,7 @@
 
 namespace VirtualPet
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -16,6 +16,12 @@ namespace VirtualPet
             do
             {
                 petList.PrintAllPetDetails();
+                petList.RemoveDeadPet();
+                if (petList.MaxDeadPets()) 
+                {
+                    keepThinking = false;
+                }
+             
              
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
@@ -34,7 +40,7 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        petList.Park();
+                        petList.TakeToPark();
                         break;
                     case "2":
                         petList.FeedAllPets();
@@ -68,10 +74,6 @@ namespace VirtualPet
                         Console.Write("Enter Pet's Species: ");
                         myPet.PetSpecies(Console.ReadLine());
                         petList.AddPet(myPet);
-                        if (myPet.Hunger >= 100)
-                        {
-                            keepThinking = false;
-                        }
                         Console.Clear();
                         break;
                     case "7":
@@ -91,6 +93,7 @@ namespace VirtualPet
            
 
                 }
+           
             
 
             } while (keepThinking);

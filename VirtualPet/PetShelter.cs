@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace VirtualPet
 {
-    public class PetShelter
+    public class PetShelter 
     {
         public List<Pet> PetShelterList = new List<Pet>();
+        public int DeadPetCount { get; set; }
 
         public void AddPet(Pet pet)
         {
@@ -60,7 +62,7 @@ namespace VirtualPet
                 pet.Water();
             }
         }
-        public void Park()
+        public void TakeToPark()
         {
             foreach(Pet pet in PetShelterList)
             {
@@ -69,7 +71,36 @@ namespace VirtualPet
             }
         }
 
-   
+        public void RemoveDeadPet()
+        {
+            List<Pet> deadPetList = new List<Pet>();
+            foreach(Pet pet in PetShelterList)
+            {
+                bool isDead = pet.CheckIfDead();
+                if (isDead)
+                {
+                    deadPetList.Add(pet);
+                    DeadPetCount++;
+                }
+
+            }
+            foreach (Pet pet in deadPetList)
+            {
+                    RemovePetFromList(pet);
+                    Console.WriteLine($"{pet.GetName()} is Dead!!");
+            }
+
+        }
+        public bool MaxDeadPets()
+        {
+            if (DeadPetCount >= 2)
+            {
+                Console.WriteLine("Game Over!");
+                return true;
+            }
+            return false;
+
+        }
 
     }
 }
