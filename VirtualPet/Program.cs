@@ -68,6 +68,10 @@ namespace VirtualPet
                         Console.Write("Enter Pet's Species: ");
                         myPet.PetSpecies(Console.ReadLine());
                         petList.AddPet(myPet);
+                        if (myPet.Hunger >= 100)
+                        {
+                            keepThinking = false;
+                        }
                         Console.Clear();
                         break;
                     case "7":
@@ -87,7 +91,7 @@ namespace VirtualPet
            
 
                 }
-               
+            
 
             } while (keepThinking);
             
