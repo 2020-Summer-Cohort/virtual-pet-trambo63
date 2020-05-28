@@ -86,8 +86,14 @@ namespace VirtualPet
             }
             foreach (Pet pet in deadPetList)
             {
-                    RemovePetFromList(pet);
-                    Console.WriteLine($"{pet.GetName()} is Dead!!");
+                RemovePetFromList(pet);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{pet.GetName()} is Dead!!\n");
+                Console.ResetColor();
+                Console.WriteLine($"Press Enter to cart off {pet.GetName()}'s body.\n");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("You'r under investigation for animal cruelty!\n");
+                Console.ResetColor();
             }
 
         }
@@ -95,7 +101,11 @@ namespace VirtualPet
         {
             if (DeadPetCount >= 2)
             {
-                Console.WriteLine("Game Over!");
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("GAME OVER!\n");
+                Console.WriteLine("Press Enter to Exit! NOW!\n");
+                Console.ResetColor();
                 return true;
             }
             return false;

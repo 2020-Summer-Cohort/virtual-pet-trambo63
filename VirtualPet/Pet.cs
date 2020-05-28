@@ -24,9 +24,9 @@ namespace VirtualPet
         //CLASS CONSTRUCTORS
         public Pet()
         {
-            Hunger = random.Next(30, 71);
-            Thirst = random.Next(30, 71);
-            Boredom = random.Next(30, 71);
+            Hunger = random.Next(0, 71);
+            Thirst = random.Next(0, 71);
+            Boredom = random.Next(0, 71);
             Health = random.Next(30, 71);
         }
         //CLASS METHODS
@@ -174,10 +174,6 @@ namespace VirtualPet
             return false;
         }
      
-    
-      
-    
-    
 
         public void PrintPetsStatus()
         {

@@ -17,11 +17,10 @@ namespace VirtualPet
             {
                 petList.PrintAllPetDetails();
                 petList.RemoveDeadPet();
-                if (petList.MaxDeadPets()) 
+                if (petList.MaxDeadPets())
                 {
                     keepThinking = false;
                 }
-             
              
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
@@ -93,8 +92,7 @@ namespace VirtualPet
            
 
                 }
-           
-            
+
 
             } while (keepThinking);
             
