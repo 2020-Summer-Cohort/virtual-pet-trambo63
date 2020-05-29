@@ -113,9 +113,46 @@ namespace VirtualPet
 
         }
       
-        //***************************************Robots***********************************
+        //***************************************RoboPets***********************************
 
         public List<RoboPet> RoboPetShelterList = new List<RoboPet>();
 
+        public void AddRoboPet(RoboPet roboPet)
+        {
+            RoboPetShelterList.Add(roboPet);
+        }
+
+        public void PrintAllRoboPetDetails()
+        {
+            Console.WriteLine("Your RoboPets:\n");
+            foreach (RoboPet roboPet in RoboPetShelterList)
+            {
+                roboPet.PrintRoboPetsStatus();
+            }
+        }
+
+        public void PrintAllRoboPetNames()
+        {
+            int listNumber = 1;
+
+            Console.WriteLine("Current RoboPets in Shelther");
+            foreach (RoboPet roboPet in RoboPetShelterList)
+            {
+                string name = roboPet.GetRoboPetName();
+                Console.WriteLine($"{listNumber}. {name}");
+                listNumber++;
+            }
+        }
+
+        public RoboPet FindRoboPetNameByIndex(int index)
+        {
+            RoboPet selectedRoboPet = RoboPetShelterList[index];
+            return selectedRoboPet;
+        }
+
+        public void RemoveRoboPetFromList(RoboPet roboPet)
+        {
+            RoboPetShelterList.Remove(roboPet);
+        }
     }
 }

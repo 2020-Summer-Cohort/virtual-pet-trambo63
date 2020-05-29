@@ -114,7 +114,7 @@ namespace VirtualPet
                         if (isAdoptable)
                         {
                             petList.RemovePetFromList(petToRemove);
-                            myMoney += 20.00;
+                            myMoney += 40.00;
                             Console.Clear();
                         }
                         else

@@ -155,9 +155,36 @@ namespace VirtualPet
             {
                 HydraulicFluid = 0;
             }
+        }
+        public bool CheckIfBrokeDown()
+        {
+            if (Fuel <= 0 || Oil <= 0 || Grease <= 0 || HydraulicFluid <= 0)
+            {
+                return true;
+            }
 
-
+            return false;
         }
 
+        public bool CheckIfSellable()
+        {
+            if (Efficiency >= 80)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void PrintRoboPetsStatus()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            if (Fuel <= 10 || Oil <= 30 || Grease <= 30 || HydraulicFluid <= 30)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+            }
+            Console.WriteLine($"Name: {Name}| Species: {Species}| Fuel: {Fuel}| Oil: {Oil}| Grease: {Grease}| HydraulicFluid: {HydraulicFluid}| Efficiency: {Efficiency} \n");
+            Console.ResetColor();
+        }
     }
 }
