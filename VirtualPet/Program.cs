@@ -9,7 +9,7 @@ namespace VirtualPet
             //myPet is Object of Type Pet
             Pet myPet;
             PetShelter petList = new PetShelter();
-            double myMoney = 20.00;
+            double myMoney = 60.00;
 
                 Console.WriteLine("Hello! Welcome to Virtual Pet Shelter\n");
 
@@ -17,6 +17,26 @@ namespace VirtualPet
             do
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
+                if (myMoney < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                }
+                if (myMoney < -50)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Bankrupted!");
+                    Console.WriteLine("Game Over: Press Enter to Exit");
+                    keepThinking = false;
+                }
+                if (myMoney > 50)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Retirement Achieved");
+                    Console.WriteLine("Enjoy you'r Remaining years! Press Enter to Exit");
+                    Console.ResetColor();
+                    keepThinking = false;
+                }
                 Console.WriteLine($"Current Funds: ${myMoney}");
                 Console.ResetColor();
                 petList.PrintAllPetDetails();
@@ -44,12 +64,15 @@ namespace VirtualPet
                 {
                     case "1":
                         petList.TakeToPark();
+                        myMoney -= 10;
                         break;
                     case "2":
                         petList.FeedAllPets();
+                        myMoney -= 5;
                         break;
                     case "3":
                         petList.WaterAllPets();
+                        myMoney -= 5;
                         break;
                     case "4":
                         Console.Clear();
@@ -59,6 +82,7 @@ namespace VirtualPet
                         Console.Clear();
                         Pet petToTakeToVet = petList.FindPetNameByIndex(petNumber - 1);
                         petToTakeToVet.SeeDoctor();
+                        myMoney -= 5;
                         break;
                     case "5":
                         Console.Clear();
@@ -77,6 +101,7 @@ namespace VirtualPet
                         Console.Write("Enter Pet's Species: ");
                         myPet.PetSpecies(Console.ReadLine());
                         petList.AddPet(myPet);
+                        myMoney -= 10;
                         Console.Clear();
                         break;
                     case "7":
