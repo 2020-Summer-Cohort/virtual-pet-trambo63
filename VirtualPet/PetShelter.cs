@@ -7,6 +7,7 @@ namespace VirtualPet
 {
     public class PetShelter 
     {
+        //*************************Animals**********************************************
         public List<Pet> PetShelterList = new List<Pet>();
         public int DeadPetCount { get; set; }
 
@@ -111,6 +112,10 @@ namespace VirtualPet
             return false;
 
         }
+      
+        //***************************************Robots***********************************
+
+        public List<RoboPet> RoboPetShelterList = new List<RoboPet>();
 
     }
 }

@@ -173,6 +173,16 @@ namespace VirtualPet
             
             return false;
         }
+
+        public bool CheckIfAdoptable()
+        {
+            if (Health >= 80)
+            {
+                return true;
+            }
+
+            return false;
+        }
      
 
         public void PrintPetsStatus()

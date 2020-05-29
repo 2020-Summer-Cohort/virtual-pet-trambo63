@@ -9,12 +9,16 @@ namespace VirtualPet
             //myPet is Object of Type Pet
             Pet myPet;
             PetShelter petList = new PetShelter();
+            double myMoney = 20.00;
 
                 Console.WriteLine("Hello! Welcome to Virtual Pet Shelter\n");
 
             bool keepThinking = true;
             do
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"Current Funds: ${myMoney}");
+                Console.ResetColor();
                 petList.PrintAllPetDetails();
                 petList.RemoveDeadPet();
                 if (petList.MaxDeadPets())
@@ -81,16 +85,26 @@ namespace VirtualPet
                         Console.Write("Which Pet would you like to Adopt: ");
                         petNumber = Convert.ToInt32(Console.ReadLine());
                         Pet petToRemove = petList.FindPetNameByIndex(petNumber - 1);
-                        petList.RemovePetFromList(petToRemove);
-                        Console.Clear();
+                        bool isAdoptable = petToRemove.CheckIfAdoptable();
+                        if (isAdoptable)
+                        {
+                            petList.RemovePetFromList(petToRemove);
+                            myMoney += 20.00;
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("This Pet does NOT meet Adoption Criteria. Health too low!");
+                            Console.ResetColor();
+                        }
                         break;
                     case "8":
                         keepThinking = false;
                         break;
                     default:
                         break;
-           
-
                 }
 
 
