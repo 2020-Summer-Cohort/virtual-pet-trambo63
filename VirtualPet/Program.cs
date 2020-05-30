@@ -62,11 +62,12 @@ namespace VirtualPet
                 Console.WriteLine("6. Admit Pet to Shelter");
                 Console.WriteLine("7. Adopt Pet\n");
                 Console.WriteLine("ROBOPETS____________________");
-                Console.WriteLine("8. Fuel RoboPets");
-                Console.WriteLine("9. Top Off Fluids");
-                Console.WriteLine("10. Build a RoboPet");
-                Console.WriteLine("11. Sell a RoboPet");
-                Console.WriteLine("12. Exit Game\n");
+                Console.WriteLine("8. Fuel a RoboPet");
+                Console.WriteLine("9. Top Off Fluids for a RoboPet");
+                Console.WriteLine("10. Run a RoboPet");
+                Console.WriteLine("11. Build a RoboPet");
+                Console.WriteLine("12. Sell a RoboPet");
+                Console.WriteLine("13. Exit Game\n");
 
                 string menuChoice = Console.ReadLine();
                 Console.Clear();
@@ -137,12 +138,34 @@ namespace VirtualPet
                         }
                         break;
                     case "8":
-                        roboPetList.FuelUpAllRoboPets();
+                        Console.Clear();
+                        roboPetList.PrintAllRoboPetNames();
+                        Console.Write("Which RoboPet would you like to Fuel: ");
+                        int roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        RoboPet roboPetToFuel = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
+                        roboPetToFuel.FuelUp();
                         break;
                     case "9":
-                        roboPetList.TopOffFluids();
+                        Console.Clear();
+                        roboPetList.PrintAllRoboPetNames();
+                        Console.Write("Which RoboPet would you like to Top Off Fluids for: ");
+                        roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        RoboPet roboPetToTopOffFluids = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
+                        roboPetToTopOffFluids.TopOffFluids();
                         break;
                     case "10":
+                        Console.Clear();
+                        roboPetList.PrintAllRoboPetNames();
+                        Console.Write("Which RoboPet would you like to run: ");
+                        roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        RoboPet roboPetToRun = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
+                        roboPetToRun.RunRoboPet();
+                        roboPetToRun.RoboTick();
+                        break;
+                    case "11":
                         myRoboPet = new RoboPet();
                         Console.Clear();
                         Console.Write("Enter RoboPet's Name: ");
@@ -153,15 +176,15 @@ namespace VirtualPet
                         myMoney -= 10;
                         Console.Clear();
                         break;
-                    case "11":
+                    case "12":
                         Console.Clear();
                         roboPetList.PrintAllRoboPetNames();
                         Console.Write("Which RoboPet would you like to Sell: ");
-                        int roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        roboPetNumber = Convert.ToInt32(Console.ReadLine());
                         RoboPet roboPetToRemove = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
                         roboPetList.RemoveRoboPetFromList(roboPetToRemove);
                         break;
-                    case "12":
+                    case "13":
                         keepThinking = false;
                         break;
                     default:

@@ -75,27 +75,19 @@ namespace VirtualPet
             }
         }
 
-        public void TopOffOil()
+        public void TopOffFluids()
         {
             Oil += 40;
+            Grease += 40;
+            HydraulicFluid += 40;
             if (Oil >= 100)
             {
                 Oil = 100;
             }
-
-        }
-
-        public void GreaseJoints()
-        {
-            Grease += 40;
             if (Grease >= 100)
             {
                 Grease = 100;
             }
-        }
-
-        public void TopOffHydraulicFluid()
-        {
             HydraulicFluid += 40;
             if (HydraulicFluid >= 100)
             {
