@@ -60,14 +60,15 @@ namespace VirtualPet
                 Console.WriteLine("4. Take a Pet to Vet");
                 Console.WriteLine("5. Play With a Pet");
                 Console.WriteLine("6. Admit Pet to Shelter");
-                Console.WriteLine("7. Adopt Pet\n");
+                Console.WriteLine("7. Adopt Pet");
                 Console.WriteLine("ROBOPETS____________________");
                 Console.WriteLine("8. Fuel a RoboPet");
                 Console.WriteLine("9. Top Off Fluids for a RoboPet");
                 Console.WriteLine("10. Run a RoboPet");
-                Console.WriteLine("11. Build a RoboPet");
-                Console.WriteLine("12. Sell a RoboPet");
-                Console.WriteLine("13. Exit Game\n");
+                Console.WriteLine("11. Take a RoboPet to the Mechanic");
+                Console.WriteLine("12. Build a RoboPet");
+                Console.WriteLine("13. Sell a RoboPet");
+                Console.WriteLine("14. Exit Game\n");
 
                 string menuChoice = Console.ReadLine();
                 Console.Clear();
@@ -145,6 +146,7 @@ namespace VirtualPet
                         Console.Clear();
                         RoboPet roboPetToFuel = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
                         roboPetToFuel.FuelUp();
+                        myMoney -= 10;
                         break;
                     case "9":
                         Console.Clear();
@@ -154,6 +156,7 @@ namespace VirtualPet
                         Console.Clear();
                         RoboPet roboPetToTopOffFluids = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
                         roboPetToTopOffFluids.TopOffFluids();
+                        myMoney -= 5;
                         break;
                     case "10":
                         Console.Clear();
@@ -166,6 +169,16 @@ namespace VirtualPet
                         roboPetToRun.RoboTick();
                         break;
                     case "11":
+                        Console.Clear();
+                        roboPetList.PrintAllRoboPetNames();
+                        Console.Write("Which RoboPet would you like to take to the Mechanic: ");
+                        roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
+                        RoboPet roboPetToTakeToMechanic = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
+                        roboPetToTakeToMechanic.TakeToMechanic();
+                        myMoney -= 15;
+                        break;
+                    case "12":
                         myRoboPet = new RoboPet();
                         Console.Clear();
                         Console.Write("Enter RoboPet's Name: ");
@@ -173,18 +186,31 @@ namespace VirtualPet
                         Console.Write("Enter RoboPet's Species: ");
                         myRoboPet.RoboPetSpecies(Console.ReadLine());
                         roboPetList.AddRoboPet(myRoboPet);
-                        myMoney -= 10;
+                        myMoney -= 20;
                         Console.Clear();
                         break;
-                    case "12":
+                    case "13":
                         Console.Clear();
                         roboPetList.PrintAllRoboPetNames();
                         Console.Write("Which RoboPet would you like to Sell: ");
                         roboPetNumber = Convert.ToInt32(Console.ReadLine());
                         RoboPet roboPetToRemove = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
-                        roboPetList.RemoveRoboPetFromList(roboPetToRemove);
+                        bool isSellable = roboPetToRemove.CheckIfSellable();
+                        if (isSellable)
+                        {
+                            roboPetList.RemoveRoboPetFromList(roboPetToRemove);
+                            myMoney += 40.00;
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("This RoboPet is not running at a high enough efficacy to sell!");
+                            Console.ResetColor();
+                        }
                         break;
-                    case "13":
+                    case "14":
                         keepThinking = false;
                         break;
                     default:
