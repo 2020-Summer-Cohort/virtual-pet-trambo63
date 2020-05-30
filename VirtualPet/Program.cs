@@ -31,7 +31,7 @@ namespace VirtualPet
                     Console.WriteLine("Game Over: Press Enter to Exit");
                     keepThinking = false;
                 }
-                if (myMoney > 200)
+                if (myMoney >= 200)
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
