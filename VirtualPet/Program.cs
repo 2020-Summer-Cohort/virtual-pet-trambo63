@@ -8,6 +8,8 @@ namespace VirtualPet
         {
             //myPet is Object of Type Pet
             Pet myPet;
+            RoboPet myRoboPet;
+            PetShelter roboPetList = new PetShelter();
             PetShelter petList = new PetShelter();
             double myMoney = 60.00;
 
@@ -37,9 +39,12 @@ namespace VirtualPet
                     Console.ResetColor();
                     keepThinking = false;
                 }
-                Console.WriteLine($"Current Funds: ${myMoney}");
+                Console.WriteLine($"Current Funds: ${myMoney}\n");
                 Console.ResetColor();
+
                 petList.PrintAllPetDetails();
+                roboPetList.PrintAllRoboPetDetails();
+
                 petList.RemoveDeadPet();
                 if (petList.MaxDeadPets())
                 {
@@ -48,14 +53,20 @@ namespace VirtualPet
              
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
+                Console.WriteLine("ANIMALS____________________");
                 Console.WriteLine("1. Take Animals to Park");
                 Console.WriteLine("2. Feed Pets");
                 Console.WriteLine("3. Water Pets");
                 Console.WriteLine("4. Take a Pet to Vet");
                 Console.WriteLine("5. Play With a Pet");
                 Console.WriteLine("6. Admit Pet to Shelter");
-                Console.WriteLine("7. Adopt Pet");
-                Console.WriteLine("8. Exit Game\n");
+                Console.WriteLine("7. Adopt Pet\n");
+                Console.WriteLine("ROBOPETS____________________");
+                Console.WriteLine("8. Fuel RoboPets");
+                Console.WriteLine("9. Top Off Fluids");
+                Console.WriteLine("10. Build a RoboPet");
+                Console.WriteLine("11. Sell a RoboPet");
+                Console.WriteLine("12. Exit Game\n");
 
                 string menuChoice = Console.ReadLine();
                 Console.Clear();
@@ -126,6 +137,31 @@ namespace VirtualPet
                         }
                         break;
                     case "8":
+                        roboPetList.FuelUpAllRoboPets();
+                        break;
+                    case "9":
+                        roboPetList.TopOffFluids();
+                        break;
+                    case "10":
+                        myRoboPet = new RoboPet();
+                        Console.Clear();
+                        Console.Write("Enter RoboPet's Name: ");
+                        myRoboPet.RoboPetName(Console.ReadLine());
+                        Console.Write("Enter RoboPet's Species: ");
+                        myRoboPet.RoboPetSpecies(Console.ReadLine());
+                        roboPetList.AddRoboPet(myRoboPet);
+                        myMoney -= 10;
+                        Console.Clear();
+                        break;
+                    case "11":
+                        Console.Clear();
+                        roboPetList.PrintAllRoboPetNames();
+                        Console.Write("Which RoboPet would you like to Sell: ");
+                        int roboPetNumber = Convert.ToInt32(Console.ReadLine());
+                        RoboPet roboPetToRemove = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
+                        roboPetList.RemoveRoboPetFromList(roboPetToRemove);
+                        break;
+                    case "12":
                         keepThinking = false;
                         break;
                     default:

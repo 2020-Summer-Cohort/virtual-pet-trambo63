@@ -154,5 +154,23 @@ namespace VirtualPet
         {
             RoboPetShelterList.Remove(roboPet);
         }
+
+        public void FuelUpAllRoboPets()
+        {
+            foreach (RoboPet robopet in RoboPetShelterList)
+            {
+                robopet.FuelUp();
+            }
+        }
+
+        public void TopOffFluids()
+        {
+            foreach (RoboPet roboPet in RoboPetShelterList)
+            {
+                roboPet.TopOffOil();
+                roboPet.GreaseJoints();
+                roboPet.TopOffHydraulicFluid();
+            }
+        }
     }
 }
