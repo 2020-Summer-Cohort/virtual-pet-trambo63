@@ -36,7 +36,7 @@ namespace VirtualPet
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Retirement Achieved");
-                    Console.WriteLine("Enjoy you'r Remaining years! Press Enter to Exit");
+                    Console.WriteLine("Enjoy your Remaining years! Press Enter to Exit");
                     Console.ResetColor();
                     keepThinking = false;
                 }
