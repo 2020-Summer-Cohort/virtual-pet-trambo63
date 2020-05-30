@@ -179,7 +179,7 @@ namespace VirtualPet
                         Console.Clear();
                         RoboPet roboPetToTakeToMechanic = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
                         roboPetToTakeToMechanic.TakeToMechanic();
-                        myMoney -= 20;
+                        myMoney -= 35;
                         break;
                     case "12":
                         myRoboPet = new RoboPet();
