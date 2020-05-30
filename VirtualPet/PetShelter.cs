@@ -155,8 +155,31 @@ namespace VirtualPet
             RoboPetShelterList.Remove(roboPet);
         }
 
-        
+        public void RemoveTotaledRoboPet()
+        {
+            List<RoboPet> totaledRoboPetList = new List<RoboPet>();
+            foreach (RoboPet roboPet in RoboPetShelterList)
+            {
+                bool isTotaled = roboPet.CheckIfTotaled();
+                if (isTotaled)
+                {
+                    totaledRoboPetList.Add(roboPet);
+                }
 
-       
+            }
+            foreach (RoboPet roboPet in totaledRoboPetList)
+            {
+                RemoveRoboPetFromList(roboPet);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{roboPet.GetRoboPetName()} is Totaled!!\n");
+                Console.WriteLine($"Press Enter to haul off {roboPet.GetRoboPetName()} to Robo Junk Yard.\n");
+                Console.ResetColor();
+            }
+
+        }
+
+
+
+
     }
 }

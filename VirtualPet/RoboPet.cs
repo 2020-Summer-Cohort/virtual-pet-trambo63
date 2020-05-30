@@ -106,7 +106,7 @@ namespace VirtualPet
 
         public void RunRoboPet()
         {
-            Fuel -= 10;
+            Fuel -= 20;
             Oil -= 10;
             Grease -= 10;
             HydraulicFluid -= 10;
@@ -148,9 +148,9 @@ namespace VirtualPet
                 HydraulicFluid = 0;
             }
         }
-        public bool CheckIfBrokeDown()
+        public bool CheckIfTotaled()
         {
-            if (Fuel <= 0 || Oil <= 0 || Grease <= 0 || HydraulicFluid <= 0)
+            if (Fuel <= 0 || Oil <= 20 || Grease <= 20 || HydraulicFluid <= 20)
             {
                 return true;
             }

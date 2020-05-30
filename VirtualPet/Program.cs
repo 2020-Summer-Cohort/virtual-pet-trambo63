@@ -11,9 +11,10 @@ namespace VirtualPet
             RoboPet myRoboPet;
             PetShelter roboPetList = new PetShelter();
             PetShelter petList = new PetShelter();
-            double myMoney = 60.00;
-
-                Console.WriteLine("Hello! Welcome to Virtual Pet Shelter\n");
+            double myMoney = 40.00;
+            
+            Console.WriteLine("Hello! Welcome to Virtual Pet Shelter");
+            Console.WriteLine("Earn $200.00 to reach Retierment\n");
 
             bool keepThinking = true;
             do
@@ -30,7 +31,7 @@ namespace VirtualPet
                     Console.WriteLine("Game Over: Press Enter to Exit");
                     keepThinking = false;
                 }
-                if (myMoney > 100)
+                if (myMoney > 200)
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -50,10 +51,12 @@ namespace VirtualPet
                 {
                     keepThinking = false;
                 }
+
+                roboPetList.RemoveTotaledRoboPet();
              
                 Console.WriteLine("Type Number and press Enter:");
                 Console.WriteLine("What would you like to do?\n");
-                Console.WriteLine("ANIMALS____________________");
+                Console.WriteLine("PETS____________________");
                 Console.WriteLine("1. Take Animals to Park");
                 Console.WriteLine("2. Feed Pets");
                 Console.WriteLine("3. Water Pets");
@@ -176,7 +179,7 @@ namespace VirtualPet
                         Console.Clear();
                         RoboPet roboPetToTakeToMechanic = roboPetList.FindRoboPetNameByIndex(roboPetNumber - 1);
                         roboPetToTakeToMechanic.TakeToMechanic();
-                        myMoney -= 15;
+                        myMoney -= 20;
                         break;
                     case "12":
                         myRoboPet = new RoboPet();
@@ -199,7 +202,7 @@ namespace VirtualPet
                         if (isSellable)
                         {
                             roboPetList.RemoveRoboPetFromList(roboPetToRemove);
-                            myMoney += 40.00;
+                            myMoney += 60.00;
                             Console.Clear();
                         }
                         else
