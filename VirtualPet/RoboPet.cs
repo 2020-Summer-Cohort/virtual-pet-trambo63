@@ -14,7 +14,7 @@ namespace VirtualPet
         public int Oil { get; set; }
         public int Grease { get; set; }
         public int HydraulicFluid { get; set; }
-        public int Efficiency { get; set; }
+        public int RoboHealth { get; set; }
 
         //CLASS CONSTRUCTORS
         public RoboPet()
@@ -23,7 +23,7 @@ namespace VirtualPet
             Oil = 60;
             Grease = 60;
             HydraulicFluid = 60;
-            Efficiency = 50;
+            RoboHealth = 50;
         }
 
         //CLASS METHODS
@@ -61,9 +61,9 @@ namespace VirtualPet
             return HydraulicFluid;
         }
 
-        public int GetEfficiency()
+        public int GetRoboHealth()
         {
-            return Efficiency;
+            return RoboHealth;
         }
 
         public void FuelUp()
@@ -97,10 +97,10 @@ namespace VirtualPet
 
         public void TakeToMechanic()
         {
-            Efficiency += 40;
-            if (Efficiency >= 100)
+            RoboHealth += 40;
+            if (RoboHealth >= 100)
             {
-                Efficiency = 100;
+                RoboHealth = 100;
             }
         }
 
@@ -110,7 +110,7 @@ namespace VirtualPet
             Oil -= 10;
             Grease -= 10;
             HydraulicFluid -= 10;
-            Efficiency += 10;
+            RoboHealth += 10;
             if (Fuel <= 0)
             {
                 Fuel = 0;
@@ -160,7 +160,7 @@ namespace VirtualPet
 
         public bool CheckIfSellable()
         {
-            if (Efficiency >= 80)
+            if (RoboHealth >= 80)
             {
                 return true;
             }
@@ -175,7 +175,7 @@ namespace VirtualPet
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
             }
-            Console.WriteLine($"Name: {Name}| Species: {Species}| Fuel: {Fuel}| Oil: {Oil}| Grease: {Grease}| HydraulicFluid: {HydraulicFluid}| Efficiency: {Efficiency} \n");
+            Console.WriteLine($"Name: {Name}| Species: {Species}| Fuel: {Fuel}| Oil: {Oil}| Grease: {Grease}| HydraulicFluid: {HydraulicFluid}| RoboHealth: {RoboHealth} \n");
             Console.ResetColor();
         }
     }

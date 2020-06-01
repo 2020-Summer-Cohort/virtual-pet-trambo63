@@ -209,7 +209,7 @@ namespace VirtualPet
                         {
                             Console.Clear();
                             Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.WriteLine("This RoboPet is not running at a high enough efficacy to sell!");
+                            Console.WriteLine("This RoboPet does have high enough RoboHealth to sell!");
                             Console.ResetColor();
                         }
                         break;
