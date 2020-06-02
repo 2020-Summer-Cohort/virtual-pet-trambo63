@@ -138,7 +138,7 @@ namespace VirtualPet
             Console.WriteLine("Current RoboPets in Shelther");
             foreach (RoboPet roboPet in RoboPetShelterList)
             {
-                string name = roboPet.GetRoboPetName();
+                string name = roboPet.GetName();
                 Console.WriteLine($"{listNumber}. {name}");
                 listNumber++;
             }
@@ -169,10 +169,10 @@ namespace VirtualPet
             }
             foreach (RoboPet roboPet in totaledRoboPetList)
             {
-                RemoveRoboPetFromList(roboPet);
+                RemovePetFromList(roboPet);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"{roboPet.GetRoboPetName()} is Totaled!!\n");
-                Console.WriteLine($"Press Enter to haul off {roboPet.GetRoboPetName()} to Robo Junk Yard.\n");
+                Console.WriteLine($"{roboPet.GetName()} is Totaled!!\n");
+                Console.WriteLine($"Press Enter to haul off {roboPet.GetName()} to Robo Junk Yard.\n");
                 Console.ResetColor();
             }
 

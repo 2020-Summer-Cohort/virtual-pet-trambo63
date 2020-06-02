@@ -185,9 +185,9 @@ namespace VirtualPet
                         myRoboPet = new RoboPet();
                         Console.Clear();
                         Console.Write("Enter RoboPet's Name: ");
-                        myRoboPet.RoboPetName(Console.ReadLine());
+                        myRoboPet.PetName(Console.ReadLine());
                         Console.Write("Enter RoboPet's Species: ");
-                        myRoboPet.RoboPetSpecies(Console.ReadLine());
+                        myRoboPet.PetSpecies(Console.ReadLine());
                         roboPetList.AddRoboPet(myRoboPet);
                         myMoney -= 20;
                         Console.Clear();

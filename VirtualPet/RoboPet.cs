@@ -4,12 +4,10 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class RoboPet 
+    public class RoboPet : Pet
     {
         Random random = new Random();
         //CLASS PROPERTIES
-        public string Name { get; set; }
-        public string Species { get; set; }
         public int Fuel { get; set; }
         public int Oil { get; set; }
         public int Grease { get; set; }
@@ -24,21 +22,6 @@ namespace VirtualPet
             Grease = 60;
             HydraulicFluid = 60;
             RoboHealth = 50;
-        }
-
-        //CLASS METHODS
-        public void RoboPetName(string name)
-        {
-            Name = name;
-        }
-        public string GetRoboPetName()
-        {
-            return Name;
-        }
-
-        public void RoboPetSpecies(string species)
-        {
-            Species = species;
         }
 
         public int GetFuel()
