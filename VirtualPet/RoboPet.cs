@@ -6,7 +6,7 @@ namespace VirtualPet
 {
     public class RoboPet : Pet
     {
-        Random random = new Random();
+        Random random1 = new Random();
         //CLASS PROPERTIES
         public int Fuel { get; set; }
         public int Oil { get; set; }
@@ -113,9 +113,9 @@ namespace VirtualPet
         }
         public void RoboTick()
         {
-            Oil -= random.Next(0, 11);
-            Grease -= random.Next(0, 11);
-            HydraulicFluid -= random.Next(0, 11);
+            Oil -= 5;
+            Grease -= 5;
+            HydraulicFluid -= 5;
 
 
             if (Oil <= 0)

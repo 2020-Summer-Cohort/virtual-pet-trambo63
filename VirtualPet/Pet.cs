@@ -11,7 +11,6 @@ namespace VirtualPet
 {
     public class Pet
     {
-        Random random = new Random();
 
         //CLASS PROPERTIES
         public string Name { get; set; }
@@ -24,10 +23,10 @@ namespace VirtualPet
         //CLASS CONSTRUCTORS
         public Pet()
         {
-            Hunger = random.Next(0, 71);
-            Thirst = random.Next(0, 71);
-            Boredom = random.Next(0, 71);
-            Health = random.Next(30, 71);
+            Hunger = 50;
+            Thirst = 60;
+            Boredom = 60;
+            Health = 30;
         }
         //CLASS METHODS
         public void PetName(string name)
@@ -144,9 +143,9 @@ namespace VirtualPet
         }
         public void Tick()
         {
-            Boredom += random.Next(0, 11);
-            Hunger += random.Next(0, 11);
-            Thirst += random.Next(0, 11);
+            Boredom += 5;
+            Hunger += 5;
+            Thirst += 5;
 
 
             if (Boredom >= 100)

@@ -7,8 +7,11 @@ namespace VirtualPet.Tests
 {
     public class RoboPetTests
     {
-        private RoboPet testRoboPet;
-        private object random;
+        public RoboPet testRoboPet;
+        public RoboPetTests()
+        {
+            testRoboPet = new RoboPet();
+        }
 
         [Fact]
         public void RoboPet_Should_Have_Fuel()
@@ -72,7 +75,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.FuelUp();
 
-            Assert.Equal(40, testRoboPet.GetFuel());
+            Assert.Equal(90, testRoboPet.GetFuel());
         }
 
         [Fact]
@@ -80,7 +83,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.TopOffFluids();
 
-            Assert.Equal(40, testRoboPet.GetOil());
+            Assert.Equal(100, testRoboPet.GetOil());
         }
 
         [Fact]
@@ -88,7 +91,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.TopOffFluids();
 
-            Assert.Equal(40, testRoboPet.GetGrease());
+            Assert.Equal(100, testRoboPet.GetGrease());
         }
 
         [Fact]
@@ -96,15 +99,15 @@ namespace VirtualPet.Tests
         {
             testRoboPet.TopOffFluids();
 
-            Assert.Equal(40, testRoboPet.GetHydraulicFluid());
+            Assert.Equal(100, testRoboPet.GetHydraulicFluid());
         }
 
         [Fact]
         public void Take_To_Mechanic_Should_Increase_RoboHealth_By_40()
         {
-            testRoboPet.Play();
+            testRoboPet.TakeToMechanic();
 
-            Assert.Equal(40, testRoboPet.GetRoboHealth());
+            Assert.Equal(90, testRoboPet.GetRoboHealth());
         }
 
         [Fact]
@@ -112,7 +115,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.RunRoboPet();
 
-            Assert.Equal(10, testRoboPet.GetRoboHealth());
+            Assert.Equal(60, testRoboPet.GetRoboHealth());
         }
 
 
@@ -121,7 +124,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.RunRoboPet();
 
-            Assert.Equal(20, testRoboPet.GetFuel());
+            Assert.Equal(30, testRoboPet.GetFuel());
         }
 
         [Fact]
@@ -129,7 +132,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.RunRoboPet();
 
-            Assert.Equal(10, testRoboPet.GetOil());
+            Assert.Equal(50, testRoboPet.GetOil());
         }
 
         [Fact]
@@ -137,7 +140,7 @@ namespace VirtualPet.Tests
         {
             testRoboPet.RunRoboPet();
 
-            Assert.Equal(10, testRoboPet.GetGrease());
+            Assert.Equal(50, testRoboPet.GetGrease());
         }
 
         [Fact]
@@ -145,31 +148,31 @@ namespace VirtualPet.Tests
         {
             testRoboPet.RunRoboPet();
 
-            Assert.Equal(10, testRoboPet.GetHydraulicFluid());
+            Assert.Equal(50, testRoboPet.GetHydraulicFluid());
         }
 
         [Fact]
-        public void Robo_Tick_Should_Decrease_Oil_By_Random()
+        public void Robo_Tick_Should_Decrease_Oil_By_5()
         {
-            testRoboPet.Tick();
+            testRoboPet.RoboTick();
 
-            Assert.Equal(random, testRoboPet.GetOil());
+            Assert.Equal(55, testRoboPet.GetOil());
         }
 
         [Fact]
-        public void Robo_Tick_Should_Decrease_Grease_By_Random()
+        public void Robo_Tick_Should_Decrease_Grease_By_5()
         {
-            testRoboPet.Tick();
+            testRoboPet.RoboTick();
 
-            Assert.Equal(random, testRoboPet.GetGrease());
+            Assert.Equal(55, testRoboPet.GetGrease());
         }
 
         [Fact]
-        public void Robo_Tick_Should_Decrease_HydraulicFluid_By_Random()
+        public void Robo_Tick_Should_Decrease_HydraulicFluid_By_5()
         {
-            testRoboPet.Tick();
+            testRoboPet.RoboTick();
 
-            Assert.Equal(random, testRoboPet.GetHydraulicFluid());
+            Assert.Equal(55, testRoboPet.GetHydraulicFluid());
         }
 
     }

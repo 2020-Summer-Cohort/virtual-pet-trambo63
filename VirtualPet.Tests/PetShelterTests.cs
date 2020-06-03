@@ -52,11 +52,11 @@ namespace VirtualPet.Tests
         public void FeedAllPets_Should_Feed_All_Pets()
         {
             Pet firstPet = new Pet();
-            firstPet.Hunger = 10;
+            firstPet.Hunger = 80;
             sut.AddPet(firstPet);
 
             Pet secondPet = new Pet();
-            secondPet.Hunger = 10;
+            secondPet.Hunger = 80;
             sut.AddPet(secondPet);
 
             sut.FeedAllPets();
@@ -69,11 +69,11 @@ namespace VirtualPet.Tests
         public void WaterAllPets_Should_Water_All_Pets()
         {
             Pet firstPet = new Pet();
-            firstPet.Thirst = 10;
+            firstPet.Thirst = 70;
             sut.AddPet(firstPet);
 
             Pet secondPet = new Pet();
-            secondPet.Thirst = 10;
+            secondPet.Thirst = 70;
             sut.AddPet(secondPet);
 
             sut.WaterAllPets();
